@@ -3,10 +3,11 @@
         <win-streak />
         <div class="relative">
             <flag-component :loading="loading" :img-src="imgSrc" />
-            <display-answer v-if="completed" key="answer-result" :has-won="this.won" :answer="finalAnswer"  />
+            <display-answer v-if="completed" key="answer-result" :has-won="this.won" :answer="finalAnswer" />
+            <div v-else class="h-16"></div>
         </div>
         <div class="mx-5 md:mx-0">
-            <button class="bg-gray-700 text-white w-full my-2 md:my-5 py-3 mx-auto rounded-md text-1xl font-medium hover:bg-gray-500 transition duration-300" @click="resetGame">Restart Game</button>
+            <button class="bg-blue-700 text-white w-full my-2 xl:my-4 py-3 mx-auto rounded-md text-1xl font-medium hover:bg-gray-500 transition duration-300" @click="resetGame">Restart Game</button>
             <display-guesses :checking-answer="checkingAnswer" :guesses="guesses" :has-won="won" />
             <typeahead-component :checking-answer="checkingAnswer" :completed="completed" :list="countries" @handleGuess="handleGuess" />
         </div>
@@ -106,6 +107,11 @@ export default {
             this.generateCountry();
         },
         handleGuess(guess) {
+            // Dont submit a guess if the game is completed
+            if(this.completed) {
+                console.log('derp')
+                return;
+            }
             this.checkingAnswer = true;
             axios.post('/api/guess', {guess, answer: this.answer, attempt: this.guesses.length + 1}).then(response => {
                 this.guesses.push(response.data);
