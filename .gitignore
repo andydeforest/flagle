@@ -1,6 +1,8 @@
 /node_modules
 /public/js/*
+/public/mix-manifest.json
 /public/css/*
+/public/images/flags/*
 /public/hot
 /public/storage
 /storage/*.key
