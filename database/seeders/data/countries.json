@@ -1815,14 +1815,6 @@
         "longitude" : -97
       },
   {
-        "country" : "United States Minor Outlying Islands",
-        "alpha2" : "UM",
-        "alpha3" : "UMI",
-        "numeric" : 581,
-        "latitude" : 19.2833,
-        "longitude" : 166.6
-      },
-  {
         "country" : "Uruguay",
         "alpha2" : "UY",
         "alpha3" : "URY",
