@@ -7,7 +7,7 @@
             <input-display :success="this.hasWon">{{ `${g.distance.toFixed(0)} nm` }}</input-display>
         </div>
         <div>
-            <input-display :success="this.hasWon">{{ `${getBearingEmoji(g)}` }}</input-display>
+            <input-display :success="this.hasWon"><span v-html="getBearingEmoji(g)"></span></input-display>
         </div>
         <div>
             <input-display :success="this.hasWon">{{ `${parseInt(g.percent).toFixed(0)}%` }}</input-display>
@@ -90,24 +90,24 @@ export default {
     methods: {
         getBearingEmoji(answer) {
             if(answer.status) {
-                return '🎉';
+                return '&#127881';
             }
             if(answer.bearing <= 30) {
-                return '⬆';
+                return '&#x02191';
             } else if(answer.bearing > 30 && answer.bearing <= 75) {
-                return '↗';
+                return '&#x02197';
             } else if(answer.bearing > 75 && answer.bearing <= 120) {
-                return '➡';
+                return '&#x02192;';
             } else if(answer.bearing > 120 && answer.bearing <= 165) {
-                return '↘';
+                return '&#x02198';
             } else if(answer.bearing > 165 && answer.bearing <= 210) {
-                return '⬇';
+                return '&#x02193';
             } else if(answer.bearing > 210 && answer.bearing <= 255) {
-                return '↙';
+                return '&#x02199';
             } else if(answer.bearing > 255 && answer.bearing <= 300) {
-                return '⬅';
+                return '&#x02190';
             } else {
-                return '↖';
+                return '&#x02196';
             }
         }
     }
