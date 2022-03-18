@@ -1,5 +1,5 @@
 <template>
-    <div v-for="(g, x) in this.guesses" :key="x" class="grid mt-3 xl:mt-5 grid-cols-6 md:grid-cols-4 gap-2">
+    <div v-for="(g, x) in this.guesses" :key="x" class="grid mt-3 xl:mt-5 grid-cols-6 md:grid-cols-4 gap-2 h-10">
         <div class="col-span-2 md:col-span-1">
             <input-display :value="g.guess" :success="this.hasWon" />
         </div>
@@ -13,31 +13,31 @@
             <input-display :value="`${parseInt(g.percent).toFixed(0)}%`" :success="this.hasWon" />
         </div>
     </div>
-    <div v-if="this.checkingAnswer" key="answer-loading" class="grid items-center mt-3 xl:mt-5 grid-cols-6 md:grid-cols-4 gap-2">
-        <div class="col-span-2 md:col-span-1 text-center content-center bg-gray-500 border border-solid border-gray-900 rounded">
-            <spinner-component :height="42" class="py-2" />
+    <div v-if="this.checkingAnswer" key="answer-loading" class="grid items-center mt-3 xl:mt-5 grid-cols-6 md:grid-cols-4 gap-2 h-10">
+        <div class="col-span-2 md:col-span-1 text-center content-center bg-gray-500 border border-solid border-gray-900 rounded h-full">
+            <spinner-component class="py-2" />
         </div>
-        <div class="col-span-2 md:col-span-1 text-center content-center bg-gray-500 border border-solid border-gray-900 rounded">
-            <spinner-component :height="42" class="py-2" />
+        <div class="col-span-2 md:col-span-1 text-center content-center bg-gray-500 border border-solid border-gray-900 rounded h-full">
+            <spinner-component class="py-2" />
         </div>
-        <div class="text-center content-center bg-gray-500 border border-solid border-gray-900 rounded">
-            <spinner-component :height="42" class="py-2" />
+        <div class="text-center content-center bg-gray-500 border border-solid border-gray-900 rounded h-full">
+            <spinner-component class="py-2" />
         </div>
-        <div class="text-center content-center bg-gray-500 border border-solid border-gray-900 rounded">
-            <spinner-component :height="42" class="py-2" />
+        <div class="text-center content-center bg-gray-500 border border-solid border-gray-900 rounded h-full">
+            <spinner-component class="py-2" />
         </div>
     </div>
-    <div v-for="x in remainingLength" :key="x" class="grid mt-3 xl:mt-5 grid-cols-6 md:grid-cols-4 gap-2">
-        <div class="col-span-2 md:col-span-1">
+    <div v-for="x in remainingLength" :key="x" class="grid mt-3 xl:mt-5 grid-cols-6 md:grid-cols-4 gap-2 h-10">
+        <div class="col-span-2 md:col-span-1 h-full">
             <input-display value="" />
         </div>
-        <div class="col-span-2 md:col-span-1">
+        <div class="col-span-2 md:col-span-1 h-full">
             <input-display value="" />
         </div>
-        <div>
+        <div class="h-full">
             <input-display value="" />
         </div>
-        <div>
+        <div class="h-full">
             <input-display value="" />
         </div>
     </div>
@@ -84,12 +84,6 @@ export default {
                 return 5 - this.guesses.length;
             }
             return 6 - this.guesses.length;
-        },
-        spinnerHeight() {
-            if(document.querySelector('.answer-input') !== null) {
-                return document.querySelector('.answer-input').offsetHeight;
-            }
-            return 0;
         }
     },
     methods: {
