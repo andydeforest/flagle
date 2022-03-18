@@ -1,5 +1,7 @@
 <template>
-    <input type="text" class="form-control answer-input block w-full px-3 py-1.5 m-0 text-xs md:text-lg text-center text-white font-bold bg-clip-padding border border-solid border-gray-900 rounded h-full" :class="[this.success ? 'bg-green-500' : 'bg-gray-500']" :value="this.value" disabled />
+    <div class="flex text-center text-sm md:text-lg text-white font-bold truncate w-full align-middle p-1 md:p-2 border border-solid border-gray-900 rounded h-full" :class="[this.success ? 'bg-green-500' : 'bg-gray-500']">
+        <div class="m-auto "><slot /></div>
+    </div>
 </template>
 
 <script>
@@ -7,10 +9,6 @@
 export default {
     name: 'input-display',
     props: {
-        value: {
-            type: String,
-            default: ''
-        },
         success: {
             type: Boolean,
             default: false

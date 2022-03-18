@@ -1,5 +1,5 @@
 <template>
-    <img v-show="!this.loading && this.ready" @load="this.ready = true" :src="this.imgSrc" :class="{'animate__animated animate__slideInLeft animate__faster': this.animating }" class="flag mx-auto object-cover sm:mx-26 mb-5 " />
+    <img v-show="!this.loading && this.ready" @load="this.ready = true" :src="this.imgSrc" alt="Country flag" :class="{'animate__animated animate__slideInLeft animate__faster': this.animating }" class="flag mx-auto object-cover sm:mx-26 mb-5 " />
     <div v-if="this.loading || !this.ready" key="flag-skeleton" class="skeleton mb-5 mx-auto align-middle"></div>
 </template>
 

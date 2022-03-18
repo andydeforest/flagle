@@ -1,11 +1,9 @@
 <template>
     <div class="mt-2 md:mt-0">
         <win-streak />
-            <display-answer v-if="completed" key="answer-result" :has-won="this.won" :answer="finalAnswer" />
-            <div v-else class="h-16"></div>
+        <display-answer key="answer-result" :completed="completed" :has-won="this.won" :answer="finalAnswer" />
         <div class="relative">
             <flag-component :loading="loading" :img-src="imgSrc" />
-
         </div>
         <div class="mx-5 md:mx-0">
             <button class="bg-blue-700 text-white w-full my-2 xl:my-4 py-3 mx-auto rounded-md text-1xl font-medium hover:bg-gray-500 transition duration-300" @click="resetGame">Restart Game</button>

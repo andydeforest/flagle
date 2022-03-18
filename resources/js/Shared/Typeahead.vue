@@ -8,7 +8,7 @@
                     </div>
                 </div>
             </div>
-            <input type="text" id="focusinput" ref="focusinput" :disabled="this.checkingAnswer || this.completed" autofocus autocomplete="false" :placeholder="placeholder" v-model="input" @input="search" class="relative form-control block h-10 w-full px-3 py-1.5 text-sm md:text-lg font-bold md:font-extrabold bg-clip-padding border border-solid border-gray-700 rounded transition ease-in-out m-0 bg-gray-50 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
+            <input type="text" id="focusinput" ref="focusinput" :disabled="this.checkingAnswer || this.completed" autofocus autocomplete="false" :placeholder="placeholder" v-model="input" @input="search" class="relative form-control block h-10 w-full px-3 py-1.5 text-xs md:text-lg font-bold md:font-extrabold bg-clip-padding border border-solid border-gray-700 rounded transition ease-in-out m-0 bg-gray-50 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
         </div>
     </div>
 </template>
