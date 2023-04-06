@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   ssr: false,
   app: {
+    baseURL: '/flagle/',
     head: {
       titleTemplate: (titleChunk) => {
         return titleChunk ? `${titleChunk} | Flagle` : 'Flagle';
