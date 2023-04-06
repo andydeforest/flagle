@@ -1,0 +1,13 @@
+// breakpoint map
+$breakpoints: (
+  "xxsmall": 20rem, // 320px
+  "xsmall": 25rem, // 400px
+  "small": 31.25rem, // 500px
+  "container-switch-1": 35rem, // 560px
+  "medium": 48rem, // 768px
+  "container-switch-2": 55rem, // 880px
+  "large": 64rem, // 1024px
+  "xlarge": 75rem, // 1200px
+  "xxlarge": 90rem, // 1440px
+  "xxxlarge": 100rem // 1600px
+);

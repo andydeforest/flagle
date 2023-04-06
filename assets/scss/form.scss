@@ -1,0 +1,61 @@
+a.btn,
+button.btn {
+  padding: 1rem 4rem;
+  position: relative;
+  display: inline-block;
+  font-family: var(--heading-font-family);
+
+  @include breakpoint(medium) {
+    padding: 0.5rem 2rem;
+  }
+
+  &:not(.transparent) {
+    &:not(.secondary) {
+      background-color: var(--sims-blue);
+      color: #fff;
+    }
+
+    &.secondary {
+      background-color: #aaa;
+      color: #666;
+    }
+  }
+
+  &.transparent {
+    border-width: 2px;
+    border-style: solid;
+
+    &.light {
+      border-color: #fff;
+      color: #fff;
+
+      &:hover {
+        border-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #000;
+      }
+    }
+
+    &.dark {
+      border-color: #000;
+      color: #000;
+      
+      &:hover {
+        border-color: #000;
+        background-color: #000;
+        color: #fff;
+      }
+    }
+
+    &:hover {
+      transition: all 0.3s ease;
+    }
+  }
+
+  &.fluid-mobile {
+    @include up-till-breakpoint(medium) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

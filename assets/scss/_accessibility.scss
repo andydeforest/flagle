@@ -1,0 +1,38 @@
+
+// hide content meant for screen readers
+.sr-only {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+}
+
+// remove focus rings unless the user is accessing via keyboard
+:focus {
+  outline-color: var(--primary-site-color);
+  outline-offset: 0.5rem;
+  -webkit-focus-ring-color: var(--primary-site-color);
+
+  [data-whatinput="mouse"] &,
+  [data-whatinput="touch"] & {
+    outline: none;
+  }
+}
+
+// remove movement when appropriate (note: scroll snap is unaffected)
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}

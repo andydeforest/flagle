@@ -1,0 +1,53 @@
+@mixin breakpoint($name) {
+  @if map-has-key($breakpoints, $name) {
+    $value: map-get($breakpoints, $name);
+
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$name}`. Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin up-till-breakpoint($name) {
+  @if map-has-key($breakpoints, $name) {
+    $value: map-get($breakpoints, $name) - 0.02;
+
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$name}`. Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin breakpoint-range($name1, $name2) {
+  @if map-has-key($breakpoints, $name1) {
+    @if map-has-key($breakpoints, $name2) {
+      $value1: map-get($breakpoints, $name1);
+      $value2: map-get($breakpoints, $name2) - 0.02;
+
+      @media (min-width: $value1) and (max-width: $value2) {
+        @content;
+      }
+    } @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$name2}`. Please make sure it is defined in `$breakpoints` map.";
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$name1}`. Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+@mixin base-hover() {
+  [data-whatintent="mouse"] &:hover,
+  [data-whatintent="keyboard"] &:focus,
+  [data-whatintent="touch"] &:active {
+    @content;
+  }
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
