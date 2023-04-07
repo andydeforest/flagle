@@ -17,14 +17,25 @@
 </template>
 
 <script>
+import { gameStore } from '@/stores/game';
+
 export default {
   props: {
     result: Object
   },
+  data() {
+    return {
+      gameStore: gameStore()
+    };
+  },
   computed: {
     distance() {
       if (this.result) {
-        return parseInt(this.result.distance.toFixed(0)).toLocaleString() + ' km';
+        if (this.gameStore.options.useMetric) {
+          return parseInt((this.result.distance).toFixed(0)).toLocaleString() + ' km';
+        } else {
+          return parseInt((this.result.distance * 0.621371).toFixed(0)).toLocaleString() + ' mi';
+        }
       }
       return '';
     },

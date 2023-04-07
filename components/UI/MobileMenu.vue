@@ -16,6 +16,9 @@
           <BaseIcon icon="fab fa-github" />
         </a>
       </li>
+      <li>
+        <UIUnitToggle />
+      </li>
     </ul>
   </div>
 </template>

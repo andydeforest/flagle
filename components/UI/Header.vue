@@ -22,6 +22,9 @@
             <BaseIcon icon="fab fa-github" />
           </a>
         </li>
+        <li>
+          <UIUnitToggle />
+        </li>
       </ul>
     </div>
     <div class="ui-header__mobile">

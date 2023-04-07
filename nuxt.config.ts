@@ -12,7 +12,7 @@ export default defineNuxtConfig({
         { hid: 'og-type', property: 'og:type', content: 'website' },
         { hid: 'og-title', property: 'og:title', content: 'Flagle' },
         { hid: 'og-desc', property: 'og:description', content: 'Flagle is a Wordle-inspired flag guessing game.' },
-        { hid: 'og-image', property: 'og:image', content: 'meta.jpg' }
+        { hid: 'og-image', property: 'og:image', content: 'https://andydeforest.github.io/flagle/meta.jpg' }
       ],
       link: [{ rel: 'icon', type: 'image/png', href: 'favicon.png' }]
     },
@@ -35,7 +35,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/device',
     '@nuxtjs/google-fonts',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt'
   ],
   device: {
     refreshOnResize: true

@@ -6,6 +6,7 @@
         type="text"
         :class="[showingResults ? 'showing-results' : '']"
         placeholder="Type a country name here..."
+        autofocus
         @input="search"
       >
       <div v-if="showingResults" class="game-guess-input__typeahead">
@@ -51,6 +52,9 @@ export default {
   methods: {
     search() {
       this.results = this.fuse.search(this.value);
+      if (this.results.length) {
+        this.selectedIndex = 0;
+      }
     },
     select(result) {
       this.value = '';
@@ -71,7 +75,9 @@ export default {
           this.selectedIndex--;
         }
       } else if (e.key === 'Enter' || e.key === 'Tab') {
-        this.select(this.results[this.selectedIndex].item);
+        if (this.results[this.selectedIndex]) {
+          this.select(this.results[this.selectedIndex].item);
+        }
       }
     }
   }

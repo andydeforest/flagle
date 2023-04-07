@@ -1,7 +1,7 @@
 <template>
-  <div v-if="country" class="game">
+  <div v-if="gameStore.country" class="game">
     <div class="game__flag">
-      <img :src="`images/flags/${country.flag}`">
+      <GameFlag :image="`images/flags/${gameStore.country.flag}`" />
     </div>
     <div class="game__guesses">
       <GameGuessDisplay v-for="(result, x) in results" :key="x" :result="result" />
@@ -12,48 +12,59 @@
         {{ gameOver ? 'Play Again' : 'Start New Game' }}
       </button>
     </div>
-    <div class="game__guess-input">
+    <div v-if="!gameOver || !displayAnswer" class="game__guess-input">
       <GameGuessInput :countries="countries" :game-over="gameOver" @answer="answer" />
+    </div>
+    <div v-else class="game__answer">
+      <h3>
+        Correct Answer: {{ gameStore.country.country }}
+      </h3>
     </div>
   </div>
 </template>
 
 <script>
 import Flagle from '@/utils/flagle';
+import { gameStore } from '@/stores/game';
 
 export default {
   data() {
     return {
-      country: null,
+      gameStore: gameStore(),
       countries: [],
       results: [],
-      gameOver: false
+      gameOver: false,
+      displayAnswer: false
     };
   },
   mounted() {
-    this.startGame();
+    this.startGame(false);
   },
   methods: {
     answer(guess) {
-      const result = Flagle.getResult(guess, this.country);
+      const result = Flagle.getResult(guess, this.gameStore.country);
       this.results.push(result);
 
       if (result.success || this.results.length >= 6) {
         this.gameOver = true;
 
         if (result.success) {
-          // handle winning here
+          this.gameStore.winStreak++;
         } else {
-          // handle losing here
+          this.gameStore.winStreak = 0;
+          this.displayAnswer = true;
         }
       }
     },
-    startGame() {
-      this.country = Flagle.random();
+    startGame(reload = true) {
+      if (this.gameStore.country === null || reload) {
+        this.gameStore.country = Flagle.random();
+      }
       this.countries = Flagle.countries();
     },
     resetGame() {
       this.gameOver = false;
+      this.displayAnswer = false;
       this.results = [];
       this.startGame();
     }
@@ -67,20 +78,6 @@ export default {
   flex-direction: column;
   gap: var(--base-gap);
 
-  &__flag {
-    align-self: center;
-
-    img {
-      max-height: 20vh;
-      max-width: 100%;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-      @include breakpoint(medium) {
-        max-height: 30vh;
-      }
-    }
-  }
-
   &__guesses {
     display: flex;
     flex-direction: column;
@@ -93,6 +90,10 @@ export default {
     width: 100%;
     padding: 1rem;
     border-radius: 1rem;
+    text-align: center;
+  }
+
+  &__answer {
     text-align: center;
   }
 }
