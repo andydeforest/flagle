@@ -11,7 +11,7 @@
       <span class="game-guess__emoji-overlay" v-html="bearingIcon" />
     </div>
     <div>
-      <input type="text" :value="result ? `${(result.percent * 100).toFixed(0)}%` : ''" readonly>
+      <input type="text" :value="percent" readonly>
     </div>
   </div>
 </template>
@@ -50,6 +50,18 @@ export default {
         } else {
           return '&#x02196';
         }
+      }
+      return '';
+    },
+    percent() {
+      if (this.result) {
+        const percent = this.result.percent * 100;
+        if (percent >= 100) {
+          return '100%';
+        } else if (percent <= 0) {
+          return '0%';
+        }
+        return `${percent.toFixed(0)}%`;
       }
       return '';
     }

@@ -12,10 +12,49 @@
             Home
           </NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/about">
+            About
+          </NuxtLink>
+        </li>
+        <li>
+          <a href="https://github.com/andydeforest/flagle" target="_blank">
+            <BaseIcon icon="fab fa-github" />
+          </a>
+        </li>
       </ul>
     </div>
+    <div class="ui-header__mobile">
+      <button @click="menuOpen = !menuOpen">
+        <BaseIcon :icon="menuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'" />
+      </button>
+    </div>
+    <transition name="menu-slide">
+      <UIMobileMenu v-if="menuOpen" @hide-menu="hideMenu" />
+    </transition>
   </header>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      menuOpen: false
+    };
+  },
+  mounted() {
+    window.addEventListener('resize', this.hideMenu);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.hideMenu);
+  },
+  methods: {
+    hideMenu() {
+      this.menuOpen = false;
+    }
+  }
+};
+</script>
 
 <style lang="scss">
 .ui-header {
@@ -53,6 +92,18 @@
           color: #fff;
         }
       }
+    }
+  }
+
+  &__mobile {
+    display: flex;
+    color: #fff;
+    flex-grow: 1;
+    justify-content: flex-end;
+    font-size: 3rem;
+
+    @include breakpoint(medium) {
+      display: none;
     }
   }
 }

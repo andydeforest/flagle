@@ -8,6 +8,21 @@
   opacity: 0;
 }
 
+.menu-slide-enter-active,
+.menu-slide-leave-active {
+  transition: transform 0.3s ease !important;
+}
+
+.menu-slide-enter,
+.menu-slide-leave-to {
+  transform: translateX(100%) !important;
+}
+
+.menu-slide-enter-to,
+.menu-slide-leave {
+  transform: translateX(0) !important;
+}
+
 @keyframes bounce {
   0% {
     bottom: 5px;

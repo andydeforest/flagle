@@ -24,14 +24,14 @@ export default {
   data() {
     return {
       hasClass: true
-    }
+    };
   },
   computed: {
     classObject() {
       return {
         'base-section': !this.hasClass,
         'include-gaps': this.includeGaps || !this.hasClass
-      }
+      };
     }
   },
   mounted() {
@@ -40,7 +40,7 @@ export default {
       this.$el.style.setProperty('--section-row-gap', `var(--${this.sectionRowGap})`);
     }
   }
-}
+};
 </script>
 
 <style lang="scss">
