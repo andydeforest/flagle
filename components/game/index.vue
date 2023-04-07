@@ -1,7 +1,7 @@
 <template>
   <div v-if="country" class="game">
     <div class="game__flag">
-      <img :src="`/images/flags/${country.flag}`">
+      <img :src="`images/flags/${country.flag}`">
     </div>
     <div class="game__guesses">
       <GameGuessDisplay v-for="(result, x) in results" :key="x" :result="result" />

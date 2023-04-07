@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         { hid: 'og-desc', property: 'og:description', content: 'Flagle is a Wordle-inspired flag guessing game.' },
         { hid: 'og-image', property: 'og:image', content: '/meta.jpg' }
       ],
-      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
+      link: [{ rel: 'icon', type: 'image/png', href: 'favicon.png' }]
     },
     pageTransition: { name: 'page', mode: 'out-in' }
   },
