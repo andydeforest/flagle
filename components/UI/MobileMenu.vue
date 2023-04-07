@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-mobile-menu">
+  <div ref="menu" class="ui-mobile-menu">
     <ul class="ui-mobile-menu__links">
       <li>
         <NuxtLink to="/" @click="$emit('hide-menu')">

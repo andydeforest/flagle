@@ -42,6 +42,16 @@ export default {
       menuOpen: false
     };
   },
+  watch: {
+    menuOpen(isOpen) {
+      const bodyClass = 'menu-open';
+      if (isOpen) {
+        document.body.classList.add(bodyClass);
+      } else {
+        document.body.classList.remove(bodyClass);
+      }
+    }
+  },
   mounted() {
     window.addEventListener('resize', this.hideMenu);
   },
@@ -57,6 +67,10 @@ export default {
 </script>
 
 <style lang="scss">
+body.menu-open {
+  overflow: hidden;
+}
+
 .ui-header {
   background-color: var(--flagle-blue);
   display: flex;
