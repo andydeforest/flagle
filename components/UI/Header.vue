@@ -18,6 +18,9 @@
           </NuxtLink>
         </li>
         <li>
+          <UIStatisticsButton />
+        </li>
+        <li>
           <a href="https://github.com/andydeforest/flagle" target="_blank">
             <BaseIcon icon="fab fa-github" />
           </a>
@@ -105,7 +108,11 @@ body.menu-open {
       gap: var(--base-gap);
 
       li {
-        a {
+        display: flex;
+        align-items: center;
+
+        a,
+        button {
           color: #fff;
         }
       }

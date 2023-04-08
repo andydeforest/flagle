@@ -56,10 +56,10 @@ export default {
   &__option {
     &.active {
       background-color: #fff;
-      color: var(--flagle-blue);
       font-weight: 700;
 
       button {
+        color: var(--flagle-blue);
         text-decoration: underline !important;
       }
     }

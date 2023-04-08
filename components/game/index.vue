@@ -47,22 +47,24 @@ export default {
         this.gameOver = true;
 
         if (result.success) {
-          this.gameStore.winStreak++;
+          this.gameStore.handleResult(true, this.gameStore.results.length);
         } else {
-          this.gameStore.winStreak = 0;
+          this.gameStore.handleResult(false, this.gameStore.results.length);
           this.displayAnswer = true;
         }
       }
     },
     startGame(reloadCountry = false) {
       if (this.gameStore.country === null || reloadCountry) {
-        this.gameStore.country = Flagle.random();
+        this.gameStore.generateRandom();
       }
     },
     resetGame() {
       if (!this.gameOver) {
         // user is resetting before they finished, reset their streak
-        this.gameStore.winStreak = 0;
+        this.gameStore.statistics.winStreak = 0;
+        // record as a loss
+        this.gameStore.handleResult(false, this.gameStore.results.length);
       }
       this.gameOver = false;
       this.displayAnswer = false;
@@ -78,10 +80,6 @@ export default {
   display: flex;
   flex-direction: column;
   gap: var(--base-small-gap);
-
-  @include breakpoint(medium) {
-    gap: var(--base-gap);
-  }
 
   &__guesses {
     display: flex;

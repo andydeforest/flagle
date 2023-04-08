@@ -1,10 +1,6 @@
 import countries from '@/data/countries.json';
 
 export default class Flagle {
-  static random() {
-    return countries[Math.floor(Math.random() * countries.length)];
-  }
-
   static countries() {
     return countries;
   }
@@ -20,6 +16,7 @@ export default class Flagle {
       };
     }
     return {
+      success: false,
       guess: guess.country,
       ...Flagle.geolocate(guess, answer)
     };
@@ -28,7 +25,6 @@ export default class Flagle {
   static geolocate(guess, answer) {
     const distance = Flagle.distance(guess, answer);
     return {
-      success: false,
       distance,
       bearing: Flagle.bearing(guess, answer),
       percent: 1 - (distance / 12742)

@@ -12,6 +12,9 @@
         </NuxtLink>
       </li>
       <li>
+        <UIStatisticsButton />
+      </li>
+      <li>
         <a href="https://github.com/andydeforest/flagle" target="_blank" @click="$emit('hide-menu')">
           <BaseIcon icon="fab fa-github" />
         </a>
@@ -44,6 +47,10 @@
 
     a {
       color: #fff;
+    }
+
+    a,
+    svg {
       font-size: 4rem;
     }
   }
