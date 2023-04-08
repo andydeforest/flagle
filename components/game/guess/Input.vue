@@ -23,14 +23,15 @@
 
 <script>
 import Fuse from 'fuse.js';
+import { gameStore } from '@/stores/game';
 
 export default {
   props: {
-    countries: Array,
     gameOver: Boolean
   },
   data() {
     return {
+      gameStore: gameStore(),
       value: '',
       fuse: null,
       results: [],
@@ -43,7 +44,7 @@ export default {
     }
   },
   mounted() {
-    this.fuse = new Fuse(this.countries, { threshold: 0.2, minMatchCharLength: 2, ignoreLocation: true, keys: ['country'] });
+    this.fuse = new Fuse(this.gameStore.countries, { threshold: 0.2, minMatchCharLength: 2, ignoreLocation: true, keys: ['country'] });
     document.addEventListener('keydown', this.handleKeyDown);
   },
   beforeUnmount() {

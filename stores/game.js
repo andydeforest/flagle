@@ -1,4 +1,5 @@
 import { defineStore, acceptHMRUpdate } from 'pinia';
+import Flagle from '@/utils/flagle';
 
 export const gameStore = defineStore('game', {
   state: () => {
@@ -7,7 +8,9 @@ export const gameStore = defineStore('game', {
         useMetric: true
       },
       winStreak: 0,
-      country: null
+      country: null,
+      countries: Flagle.countries(),
+      results: []
     };
   },
   persist: true

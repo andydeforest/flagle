@@ -4,8 +4,8 @@
       <GameFlag :image="`images/flags/${gameStore.country.flag}`" />
     </div>
     <div class="game__guesses">
-      <GameGuessDisplay v-for="(result, x) in results" :key="x" :result="result" />
-      <GameGuessDisplay v-for="remaining in 6 - results.length" :key="remaining" />
+      <GameGuessDisplay v-for="(result, x) in gameStore.results" :key="x" :result="result" />
+      <GameGuessDisplay v-for="remaining in 6 - gameStore.results.length" :key="remaining" />
     </div>
     <div class="game__restart">
       <button class="game__play-again" @click="resetGame">
@@ -13,7 +13,7 @@
       </button>
     </div>
     <div v-if="!gameOver || !displayAnswer" class="game__guess-input">
-      <GameGuessInput :countries="countries" :game-over="gameOver" @answer="answer" />
+      <GameGuessInput :game-over="gameOver" @answer="answer" />
     </div>
     <div v-else class="game__answer">
       <h3>
@@ -31,21 +31,19 @@ export default {
   data() {
     return {
       gameStore: gameStore(),
-      countries: [],
-      results: [],
       gameOver: false,
       displayAnswer: false
     };
   },
   mounted() {
-    this.startGame(false);
+    this.startGame();
   },
   methods: {
     answer(guess) {
       const result = Flagle.getResult(guess, this.gameStore.country);
-      this.results.push(result);
+      this.gameStore.results.push(result);
 
-      if (result.success || this.results.length >= 6) {
+      if (result.success || this.gameStore.results.length >= 6) {
         this.gameOver = true;
 
         if (result.success) {
@@ -56,17 +54,20 @@ export default {
         }
       }
     },
-    startGame(reload = true) {
-      if (this.gameStore.country === null || reload) {
+    startGame(reloadCountry = false) {
+      if (this.gameStore.country === null || reloadCountry) {
         this.gameStore.country = Flagle.random();
       }
-      this.countries = Flagle.countries();
     },
     resetGame() {
+      if (!this.gameOver) {
+        // user is resetting before they finished, reset their streak
+        this.gameStore.winStreak = 0;
+      }
       this.gameOver = false;
       this.displayAnswer = false;
-      this.results = [];
-      this.startGame();
+      this.gameStore.results = [];
+      this.startGame(true);
     }
   }
 };
@@ -76,12 +77,16 @@ export default {
 .game {
   display: flex;
   flex-direction: column;
-  gap: var(--base-gap);
+  gap: var(--base-small-gap);
+
+  @include breakpoint(medium) {
+    gap: var(--base-gap);
+  }
 
   &__guesses {
     display: flex;
     flex-direction: column;
-    gap: var(--base-small-gap);
+    gap: var(--guess-gap);
   }
 
   &__play-again {

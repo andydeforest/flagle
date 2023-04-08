@@ -1,12 +1,12 @@
 <template>
   <div class="ui-unit-toggle">
     <div class="ui-unit-toggle__option" :class="[gameStore.options.useMetric ? 'active' : '']">
-      <button @click="updateUseMetric(true)">
+      <button title="Kilometers" @click="updateUseMetric(true)">
         KM
       </button>
     </div>
     <div class="ui-unit-toggle__option" :class="[!gameStore.options.useMetric ? 'active' : '']">
-      <button @click="updateUseMetric(false)">
+      <button title="Miles" @click="updateUseMetric(false)">
         MI
       </button>
     </div>
@@ -34,7 +34,7 @@ export default {
 .ui-unit-toggle {
   max-height: 100%;
   max-width: 100%;
-  border: 1px solid #fff;
+  border: 3px solid #fff;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,9 @@ export default {
   }
 
   > div {
+    display: flex;
     padding: 0.5rem;
+    flex: 1;
 
     @include breakpoint(medium) {
       padding: 0 0.5rem;

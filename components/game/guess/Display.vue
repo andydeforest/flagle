@@ -1,17 +1,14 @@
 <template>
   <div class="game-guess" :class="[result && result.success ? 'success' : '']">
-    <div>
-      <input type="text" :value="result ? result.guess : ''" readonly>
+    <div class="game-guess__country">
+      {{ result ? result.guess : '' }}
     </div>
-    <div>
-      <input type="text" :value="distance" readonly>
+    <div class="game-guess__distance">
+      {{ distance }}
     </div>
+    <div v-html="bearingIcon" />
     <div>
-      <input type="text" readonly>
-      <span class="game-guess__emoji-overlay" v-html="bearingIcon" />
-    </div>
-    <div>
-      <input type="text" :value="percent" readonly>
+      {{ percent }}
     </div>
   </div>
 </template>
@@ -85,43 +82,39 @@ export default {
   display: flex;
   flex-direction: row;
   gap: var(--base-small-gap);
+  height: 3rem;
+  gap: var(--guess-gap);
 
   &.success {
-    input {
+    > div {
       background-color: var(--flagle-success);
       color: #fff;
     }
   }
 
   > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex: 1;
-    position: relative;
+    background-color: #eee;
+    padding: 0.25rem 0.5rem;
+    border: 0.25rem solid var(--border-color);
+    font-weight: 600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 
-    input {
-      width: 100%;
-      background-color: #eee;
-      padding: 0.25rem 0.5rem;
-      border: 0.25rem solid var(--border-color);
-      font-weight: 600;
-      text-align: center;
-
-      &:focus {
-        outline: none;
-      }
+    @include up-till-breakpoint(medium) {
+      font-size: 1.2rem;
     }
   }
 
-  &__emoji-overlay {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex: 1;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: 0 auto;
+  &__country,
+  &__distance {
+    @include up-till-breakpoint(medium) {
+      justify-content: left !important;
     }
+  }
 }
 </style>
