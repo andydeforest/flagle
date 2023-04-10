@@ -8,9 +8,11 @@
         <BaseIcon icon="fa-solid fa-chart-column" />
       </span>
     </button>
-    <UIModal :open="modalOpen">
-      <UIModalStatisticsContent @close="closeModal" />
-    </UIModal>
+    <Teleport to="body">
+      <UIModal :open="modalOpen">
+        <UIModalStatisticsContent @close="closeModal" />
+      </UIModal>
+    </Teleport>
   </span>
 </template>
 
