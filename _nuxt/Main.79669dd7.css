@@ -1,1 +1,0 @@
-.container{margin:0 var(--base-container-margin);padding:var(--base-container-padding) 0;position:relative}.include-gaps .container{display:flex;flex-direction:column;gap:var(--section-row-gap)}#content{background-color:#ddd;min-height:calc(100vh - var(--base-header-height))}
