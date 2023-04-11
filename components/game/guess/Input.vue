@@ -121,6 +121,11 @@ export default {
     &:focus {
       outline: none;
     }
+
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--dark-mode-light);
+      color: white;
+    }
   }
 
   &__typeahead {
@@ -144,6 +149,19 @@ export default {
 
       &.no-results {
         cursor: default;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border-color: var(--dark-mode-light);
+      button {
+        background-color: var(--dark-mode-secondary-bg);
+        color: #fff;
+
+        &:hover,
+        &.selected {
+          background-color: var(--dark-mode-light);
+        }
       }
     }
   }

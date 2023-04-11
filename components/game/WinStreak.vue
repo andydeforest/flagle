@@ -44,5 +44,14 @@ export default {
   small {
     font-size: 1.5rem;
   }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--flagle-blue);
+    color: #fff;
+
+    h3 {
+      color: #fff;
+    }
+  }
 }
 </style>

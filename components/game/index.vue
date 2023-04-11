@@ -58,6 +58,10 @@ export default {
   },
   mounted() {
     this.startGame();
+    document.addEventListener('keydown', this.handleKeyDown);
+  },
+  beforeUnmount() {
+    document.removeEventListener('keydown', this.handleKeyDown);
   },
   methods: {
     answer(guess) {
@@ -96,7 +100,19 @@ export default {
         this.gameStore.results = [];
         this.startGame(true);
       }
-
+      // after the button click, focus the input, but give it 0.5s to render
+      setTimeout(() => {
+        const input = document.querySelector('input[type="text"]');
+        if (input) {
+          input.focus();
+        }
+      }, 500);
+    },
+    handleKeyDown(e) {
+      // when the game is over, allow user a keyboard shortcut to restart
+      if ((e.code === 'Space' || e.code  === 'Enter') && this.gameOver) {
+        this.resetGame();
+      }
     }
   }
 };
@@ -125,6 +141,12 @@ export default {
 
   &__answer {
     text-align: center;
+
+    @media (prefers-color-scheme: dark) {
+      h3 {
+        color: #fff;
+      }
+    }
   }
 }
 </style>

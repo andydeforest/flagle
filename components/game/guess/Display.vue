@@ -117,5 +117,13 @@ export default {
       justify-content: left !important;
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    > div {
+      background-color: var(--dark-mode-light);
+      border-color: var(--dark-mode-secondary-bg);
+      color: #fff;
+    }
+  }
 }
 </style>
