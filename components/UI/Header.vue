@@ -2,7 +2,10 @@
   <header class="ui-header">
     <div class="ui-header__logo">
       <NuxtLink to="/">
-        <img src="/images/icon.png" alt="Flagle logo">
+        <img
+          src="/images/icon.png"
+          alt="Flagle logo"
+        >
       </NuxtLink>
     </div>
     <div class="ui-header__nav">
@@ -21,7 +24,10 @@
           <UIStatisticsButton />
         </li>
         <li>
-          <a href="https://github.com/andydeforest/flagle" target="_blank">
+          <a
+            href="https://github.com/andydeforest/flagle"
+            target="_blank"
+          >
             <BaseIcon icon="fab fa-github" />
           </a>
         </li>
@@ -36,7 +42,10 @@
       </button>
     </div>
     <transition name="menu-slide">
-      <UIMobileMenu v-if="menuOpen" @hide-menu="hideMenu" />
+      <UIMobileMenu
+        v-if="menuOpen"
+        @hide-menu="hideMenu"
+      />
     </transition>
   </header>
 </template>

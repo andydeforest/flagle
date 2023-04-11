@@ -1,5 +1,8 @@
 <template>
-  <div v-if="open" class="ui-modal">
+  <div
+    v-if="open"
+    class="ui-modal"
+  >
     <div class="ui-modal__content">
       <slot />
     </div>

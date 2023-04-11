@@ -1,13 +1,14 @@
 <template>
-  <div v-if="gameStore.statistics.winStreak > 0" class="game-win-streak">
+  <div
+    v-if="gameStore.statistics.winStreak > 0"
+    class="game-win-streak"
+  >
     <small>Streak:</small>
     <h3>{{ gameStore.statistics.winStreak }}</h3>
   </div>
 </template>
 
 <script>
-import { gameStore } from '@/stores/game';
-
 export default {
   data() {
     return {

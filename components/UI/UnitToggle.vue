@@ -1,12 +1,24 @@
 <template>
   <div class="ui-unit-toggle">
-    <div class="ui-unit-toggle__option" :class="[gameStore.options.useMetric ? 'active' : '']">
-      <button title="Kilometers" @click="updateUseMetric(true)">
+    <div
+      class="ui-unit-toggle__option"
+      :class="[gameStore.options.useMetric ? 'active' : '']"
+    >
+      <button
+        title="Kilometers"
+        @click="updateUseMetric(true)"
+      >
         KM
       </button>
     </div>
-    <div class="ui-unit-toggle__option" :class="[!gameStore.options.useMetric ? 'active' : '']">
-      <button title="Miles" @click="updateUseMetric(false)">
+    <div
+      class="ui-unit-toggle__option"
+      :class="[!gameStore.options.useMetric ? 'active' : '']"
+    >
+      <button
+        title="Miles"
+        @click="updateUseMetric(false)"
+      >
         MI
       </button>
     </div>
@@ -14,8 +26,6 @@
 </template>
 
 <script>
-import { gameStore } from '@/stores/game';
-
 export default {
   data() {
     return {

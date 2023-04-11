@@ -1,7 +1,12 @@
 <template>
   <div class="game-flag">
     <UISpinner v-if="loading" />
-    <img :src="image" alt="Country flag" :class="[loading ? 'loading' : '']" @load="loading = false">
+    <img
+      :src="image"
+      alt="Country flag"
+      :class="[loading ? 'loading' : '']"
+      @load="loading = false"
+    >
   </div>
 </template>
 

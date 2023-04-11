@@ -1,5 +1,8 @@
 <template>
-  <div class="game-guess" :class="[result && result.success ? 'success' : '']">
+  <div
+    class="game-guess"
+    :class="[result && result.success ? 'success' : '']"
+  >
     <div class="game-guess__country">
       {{ result ? result.guess : '' }}
     </div>
@@ -14,8 +17,6 @@
 </template>
 
 <script>
-import { gameStore } from '@/stores/game';
-
 export default {
   props: {
     result: Object

@@ -1,13 +1,22 @@
 <template>
-  <div ref="menu" class="ui-mobile-menu">
+  <div
+    ref="menu"
+    class="ui-mobile-menu"
+  >
     <ul class="ui-mobile-menu__links">
       <li>
-        <NuxtLink to="/" @click="$emit('hide-menu')">
+        <NuxtLink
+          to="/"
+          @click="$emit('hide-menu')"
+        >
           <BaseIcon icon="fa fa-home" />
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/about" @click="$emit('hide-menu')">
+        <NuxtLink
+          to="/about"
+          @click="$emit('hide-menu')"
+        >
           <BaseIcon icon="fa-solid fa-question" />
         </NuxtLink>
       </li>
@@ -15,7 +24,11 @@
         <UIStatisticsButton />
       </li>
       <li>
-        <a href="https://github.com/andydeforest/flagle" target="_blank" @click="$emit('hide-menu')">
+        <a
+          href="https://github.com/andydeforest/flagle"
+          target="_blank"
+          @click="$emit('hide-menu')"
+        >
           <BaseIcon icon="fab fa-github" />
         </a>
       </li>

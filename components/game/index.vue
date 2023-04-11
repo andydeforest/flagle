@@ -1,21 +1,43 @@
 <template>
-  <div v-if="gameStore.country" class="game">
+  <div
+    v-if="gameStore.country"
+    class="game"
+  >
     <div class="game__flag">
       <GameFlag :image="`images/flags/${gameStore.country.flag}`" />
     </div>
     <div class="game__guesses">
-      <GameGuessDisplay v-for="(result, x) in gameStore.results" :key="x" :result="result" />
-      <GameGuessDisplay v-for="remaining in 6 - gameStore.results.length" :key="remaining" />
+      <GameGuessDisplay
+        v-for="(result, x) in gameStore.results"
+        :key="x"
+        :result="result"
+      />
+      <GameGuessDisplay
+        v-for="remaining in 6 - gameStore.results.length"
+        :key="remaining"
+      />
     </div>
     <div class="game__restart">
-      <button class="game__play-again" @click="resetGame">
-        {{ gameOver ? 'Play Again' : 'Start New Game' }}
+      <button
+        class="game__play-again"
+        @click="resetGame"
+      >
+        {{ gameOver ? 'Play Again' : 'I Give Up!' }}
       </button>
     </div>
-    <div v-if="!gameOver || !displayAnswer" class="game__guess-input">
-      <GameGuessInput :game-over="gameOver" @answer="answer" />
+    <div
+      v-if="!gameOver || !displayAnswer"
+      class="game__guess-input"
+    >
+      <GameGuessInput
+        :game-over="gameOver"
+        @answer="answer"
+      />
     </div>
-    <div v-else class="game__answer">
+    <div
+      v-else
+      class="game__answer"
+    >
       <h3>
         Correct Answer: {{ gameStore.country.country }}
       </h3>
@@ -25,7 +47,6 @@
 
 <script>
 import Flagle from '@/utils/flagle';
-import { gameStore } from '@/stores/game';
 
 export default {
   data() {
@@ -65,11 +86,17 @@ export default {
         this.gameStore.statistics.winStreak = 0;
         // record as a loss
         this.gameStore.handleResult(false, this.gameStore.results.length);
+        // show the the correct answer
+        this.displayAnswer = true;
+        this.gameOver = true;
+      } else {
+        // game has already been registerd as over, so we restart it
+        this.gameOver = false;
+        this.displayAnswer = false;
+        this.gameStore.results = [];
+        this.startGame(true);
       }
-      this.gameOver = false;
-      this.displayAnswer = false;
-      this.gameStore.results = [];
-      this.startGame(true);
+
     }
   }
 };

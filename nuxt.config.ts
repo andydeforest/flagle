@@ -35,7 +35,12 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/device',
     '@nuxtjs/google-fonts',
-    '@pinia/nuxt',
+    [
+      '@pinia/nuxt', {
+        autoImports: ['defineStore', 'acceptHMRUpdate']
+
+      }
+    ],
     '@pinia-plugin-persistedstate/nuxt'
   ],
   device: {

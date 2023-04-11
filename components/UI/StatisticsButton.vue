@@ -1,6 +1,9 @@
 <template>
   <span>
-    <button class="ui-statistics-button" @click="modalOpen = true">
+    <button
+      class="ui-statistics-button"
+      @click="modalOpen = true"
+    >
       <span class="ui-statistics-button__desktop">
         Your Statistics
       </span>

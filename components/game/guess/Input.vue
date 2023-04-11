@@ -2,6 +2,7 @@
   <div class="game-guess-input">
     <div v-if="!gameOver">
       <input
+        ref="guess"
         v-model="value"
         type="text"
         :class="[showingResults ? 'showing-results' : '']"
@@ -9,11 +10,22 @@
         autofocus
         @input="search"
       >
-      <div v-if="showingResults" class="game-guess-input__typeahead">
-        <button v-for="(result, x) in results" :key="x" :class="[selectedIndex === x ? 'selected' : '']" @click="select(result.item)">
+      <div
+        v-if="showingResults"
+        class="game-guess-input__typeahead"
+      >
+        <button
+          v-for="(result, x) in results"
+          :key="x"
+          :class="[selectedIndex === x ? 'selected' : '']"
+          @click="select(result.item)"
+        >
           {{ result.item.country }}
         </button>
-        <button v-if="!results.length" class="no-results">
+        <button
+          v-if="!results.length"
+          class="no-results"
+        >
           No results found! Try again...
         </button>
       </div>
@@ -23,12 +35,12 @@
 
 <script>
 import Fuse from 'fuse.js';
-import { gameStore } from '@/stores/game';
 
 export default {
   props: {
     gameOver: Boolean
   },
+  emits: ['answer'],
   data() {
     return {
       gameStore: gameStore(),
@@ -49,6 +61,11 @@ export default {
   },
   beforeUnmount() {
     document.removeEventListener('keydown', this.handleKeyDown);
+  },
+  updated() {
+    if (this.$refs.guess) {
+      this.$refs.guess.focus();
+    }
   },
   methods: {
     search() {

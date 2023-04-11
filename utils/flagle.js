@@ -42,7 +42,7 @@ export default class Flagle {
 
   static distance(a, b) {
     // Radius of the earth in km
-    const R = 6371;
+    const radius = 6378.14;
     const dLat = Flagle.deg2rad(b.latitude - a.latitude);
     const dLon = Flagle.deg2rad(b.longitude - a.longitude);
     const x =
@@ -51,7 +51,7 @@ export default class Flagle {
       Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x));
     // distance in KM
-    return R * c;
+    return radius * c;
   }
 
   static deg2rad(deg) {

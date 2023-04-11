@@ -4,7 +4,10 @@
     :data-section-background="background"
   >
     <slot v-if="noContainer" />
-    <div v-else class="container">
+    <div
+      v-else
+      class="container"
+    >
       <slot />
     </div>
   </section>

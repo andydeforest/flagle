@@ -1,6 +1,9 @@
 <template>
   <div class="game-statistics">
-    <button class="game-statistics__close" @click="$emit('close')">
+    <button
+      class="game-statistics__close"
+      @click="$emit('close')"
+    >
       <BaseIcon icon="fa-solid fa-xmark" />
     </button>
     <h2>
@@ -38,9 +41,8 @@
 </template>
 
 <script>
-import { gameStore } from '@/stores/game';
-
 export default {
+  emits: ['close'],
   data() {
     return {
       gameStore: gameStore(),
