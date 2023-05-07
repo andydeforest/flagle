@@ -46,7 +46,7 @@ export default {
   }
 
   @media (prefers-color-scheme: dark) {
-    background-color: var(--flagle-blue);
+    background-color: var(--dark-mode-secondary-bg);
     color: #fff;
 
     h3 {

@@ -67,5 +67,9 @@
       font-size: 4rem;
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--dark-mode-light);
+  }
 }
 </style>

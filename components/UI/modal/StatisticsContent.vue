@@ -106,5 +106,13 @@ export default {
       }
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    table,
+    h2,
+    svg {
+      color:#fff !important;
+    }
+  }
 }
 </style>

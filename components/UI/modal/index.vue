@@ -41,5 +41,11 @@ export default {
     max-height: 80vh;
     overflow: auto;
   }
+
+  @media (prefers-color-scheme: dark) {
+    &__content {
+      background-color: var(--dark-mode-light);
+    }
+  }
 }
 </style>

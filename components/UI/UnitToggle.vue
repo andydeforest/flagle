@@ -64,10 +64,13 @@ export default {
   }
 
   &__option {
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+
     &.active {
       background-color: #fff;
       font-weight: 700;
-
       button {
         color: var(--flagle-blue);
         text-decoration: underline !important;

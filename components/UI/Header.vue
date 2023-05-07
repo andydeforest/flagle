@@ -139,5 +139,9 @@ body.menu-open {
       display: none;
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--dark-mode-light);
+  }
 }
 </style>

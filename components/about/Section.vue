@@ -56,5 +56,18 @@
     margin-left: var(--base-container-padding);
     list-style: disc;
   }
+
+  @media (prefers-color-scheme: dark) {
+    color: #fff;
+    background-color: var(--dark-mode-light);
+
+    h1 {
+      color: #fff;
+    }
+
+    a {
+      color: #ccc;
+    }
+  }
 }
 </style>
