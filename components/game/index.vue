@@ -4,7 +4,7 @@
     class="game"
   >
     <div class="game__flag">
-      <GameFlag :image="`images/flags/${gameStore.selected.flag}`" />
+      <GameFlag :image="`/images/flags/${gameStore.selected.flag}`" />
     </div>
     <div class="game__guesses">
       <GameGuessDisplay
