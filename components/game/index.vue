@@ -1,10 +1,10 @@
 <template>
   <div
-    v-if="gameStore.country"
+    v-if="gameStore.selected"
     class="game"
   >
     <div class="game__flag">
-      <GameFlag :image="`images/flags/${gameStore.country.flag}`" />
+      <GameFlag :image="`images/flags/${gameStore.selected.flag}`" />
     </div>
     <div class="game__guesses">
       <GameGuessDisplay
@@ -31,6 +31,7 @@
     >
       <GameGuessInput
         :game-over="gameOver"
+        :game-mode="gameMode"
         @answer="answer"
       />
     </div>
@@ -39,7 +40,7 @@
       class="game__answer"
     >
       <h3>
-        Correct Answer: {{ gameStore.country.country }}
+        Correct Answer: {{ gameStore.selected.name }}
       </h3>
     </div>
   </div>
@@ -49,12 +50,23 @@
 import Flagle from '@/utils/flagle';
 
 export default {
+  props: {
+    states: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       gameStore: gameStore(),
       gameOver: false,
       displayAnswer: false
     };
+  },
+  computed: {
+    gameMode() {
+      return this.states ? 'states' : 'countries';
+    }
   },
   mounted() {
     this.startGame();
@@ -65,7 +77,7 @@ export default {
   },
   methods: {
     answer(guess) {
-      const result = Flagle.getResult(guess, this.gameStore.country);
+      const result = Flagle.getResult(guess, this.gameStore.selected);
       this.gameStore.results.push(result);
 
       if (result.success || this.gameStore.results.length >= 6) {
@@ -79,9 +91,9 @@ export default {
         }
       }
     },
-    startGame(reloadCountry = false) {
-      if (this.gameStore.country === null || reloadCountry) {
-        this.gameStore.generateRandom();
+    startGame(reload = false) {
+      if (this.gameStore.selected === null || reload) {
+        this.gameStore.generateRandom(this.gameMode);
       }
     },
     resetGame() {

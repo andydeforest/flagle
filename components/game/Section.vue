@@ -1,7 +1,7 @@
 <template>
   <span>
     <BaseSection class="game-section">
-      <Game />
+      <slot />
     </BaseSection>
     <GameWinStreak />
   </span>

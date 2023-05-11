@@ -1,15 +1,20 @@
 import countries from '@/data/countries.json';
+import states from '@/data/states.json';
 
 export default class Flagle {
+  static states() {
+    return states;
+  }
+
   static countries() {
     return countries;
   }
 
   static getResult(guess, answer) {
-    if (guess.country === answer.country) {
+    if (guess.name === answer.name) {
       return {
         success: true,
-        guess: guess.country,
+        guess: guess.name,
         distance: 0,
         bearing: 0,
         percent: 1
@@ -17,7 +22,7 @@ export default class Flagle {
     }
     return {
       success: false,
-      guess: guess.country,
+      guess: guess.name,
       ...Flagle.geolocate(guess, answer)
     };
   }

@@ -16,6 +16,11 @@
           </NuxtLink>
         </li>
         <li>
+          <NuxtLink to="/states">
+            U.S. State Flags
+          </NuxtLink>
+        </li>
+        <li>
           <NuxtLink to="/about">
             About
           </NuxtLink>

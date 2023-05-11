@@ -9,7 +9,15 @@
           to="/"
           @click="$emit('hide-menu')"
         >
-          <BaseIcon icon="fa fa-home" />
+          <BaseIcon icon="fa fa-globe" />
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
+          to="/states"
+          @click="$emit('hide-menu')"
+        >
+          <BaseIcon icon="fa fa-flag-usa" />
         </NuxtLink>
       </li>
       <li>

@@ -1,7 +1,7 @@
 <template>
   <BaseMain>
     <GameSection>
-      <Game />
+      <Game states />
     </GameSection>
   </BaseMain>
 </template>

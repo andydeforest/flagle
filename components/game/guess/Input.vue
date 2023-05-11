@@ -6,7 +6,7 @@
         v-model="value"
         type="text"
         :class="[showingResults ? 'showing-results' : '']"
-        placeholder="Type a country name here..."
+        placeholder="Type a location name here..."
         autofocus
         @input="search"
       >
@@ -20,7 +20,7 @@
           :class="[selectedIndex === x ? 'selected' : '']"
           @click="select(result.item)"
         >
-          {{ result.item.country }}
+          {{ result.item.name }}
         </button>
         <button
           v-if="!results.length"
@@ -38,7 +38,8 @@ import Fuse from 'fuse.js';
 
 export default {
   props: {
-    gameOver: Boolean
+    gameOver: Boolean,
+    gameMode: String
   },
   emits: ['answer'],
   data() {
@@ -56,7 +57,7 @@ export default {
     }
   },
   mounted() {
-    this.fuse = new Fuse(this.gameStore.countries, { threshold: 0.2, minMatchCharLength: 2, ignoreLocation: true, keys: ['country'] });
+    this.fuse = new Fuse(this.gameStore[this.gameMode], { threshold: 0.2, minMatchCharLength: 2, ignoreLocation: true, keys: ['name'] });
     document.addEventListener('keydown', this.handleKeyDown);
   },
   beforeUnmount() {

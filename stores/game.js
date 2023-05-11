@@ -15,22 +15,25 @@ export const gameStore = defineStore('game', {
         losses: 0,
         guessAmount: []
       },
-      country: null,
+      gameMode: 'countries',
+      states: Flagle.states(),
       countries: Flagle.countries(),
+      selected: null,
       results: [],
       used: []
     };
   },
   actions: {
-    generateRandom() {
+    generateRandom(mode) {
       // if no more countries are available, re-hydrate the list
-      if (this.used.length === this.countries.length) {
+      if (this.used.length === this[mode].length) {
         this.used = [];
       }
       // we store a list of used countries, and avoid picking those so duplicates are not shown
-      const availCountries = this.countries.filter(country => !this.used.includes(country));
-      this.country = availCountries[Math.floor(Math.random() * availCountries.length)];
-      this.used.push(this.country);
+      const avail = this[mode].filter(place => !this.used.includes(place));
+      const random = avail[Math.floor(Math.random() * avail.length)];
+      this.selected = random;
+      this.used.push(random);
     },
     handleResult(won, guesses) {
       this.statistics.gamesPlayed++;
