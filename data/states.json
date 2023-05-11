@@ -1,300 +1,300 @@
 [
   {
-    "flag": "/states/ef373d3651611a3af7a9c8625533380f9f9b1590.png",
+    "flag": "states/ef373d3651611a3af7a9c8625533380f9f9b1590.png",
     "latitude": 32.806671,
     "longitude": -86.79113,
     "name": "Alabama"
   },
   {
-    "flag": "/states/748ca1e24a85075b49fb6a01fe0373f50d4e6296.png",
+    "flag": "states/748ca1e24a85075b49fb6a01fe0373f50d4e6296.png",
     "latitude": 61.370716,
     "longitude": -152.404419,
     "name": "Alaska"
   },
   {
-    "flag": "/states/7fe937a52c5b157249f09f0ccbea16b573b838d8.png",
+    "flag": "states/7fe937a52c5b157249f09f0ccbea16b573b838d8.png",
     "latitude": 33.729759,
     "longitude": -111.431221,
     "name": "Arizona"
   },
   {
-    "flag": "/states/6b21b5b2e61d3e12d7067ef056055f968266b55d.png",
+    "flag": "states/6b21b5b2e61d3e12d7067ef056055f968266b55d.png",
     "latitude": 34.969704,
     "longitude": -92.373123,
     "name": "Arkansas"
   },
   {
-    "flag": "/states/214b04ab9a700ba5451383b686b5a0d6a48831ff.png",
+    "flag": "states/214b04ab9a700ba5451383b686b5a0d6a48831ff.png",
     "latitude": 36.116203,
     "longitude": -119.681564,
     "name": "California"
   },
   {
-    "flag": "/states/b7526d7b31e3d0edaf04f9a6fb65c49b13c59027.png",
+    "flag": "states/b7526d7b31e3d0edaf04f9a6fb65c49b13c59027.png",
     "latitude": 39.059811,
     "longitude": -105.311104,
     "name": "Colorado"
   },
   {
-    "flag": "/states/fe116454bccfc4318c4ab81d7be5b6c235d3a51c.png",
+    "flag": "states/fe116454bccfc4318c4ab81d7be5b6c235d3a51c.png",
     "latitude": 41.597782,
     "longitude": -72.755371,
     "name": "Connecticut"
   },
   {
-    "flag": "/states/bd0ce7dea1a7099b0add44507834c3a2846cc699.png",
+    "flag": "states/bd0ce7dea1a7099b0add44507834c3a2846cc699.png",
     "latitude": 39.318523,
     "longitude": -75.507141,
     "name": "Delaware"
   },
   {
-    "flag": "/states/9c6fb9bdfd51b22542cb847c9de4bfed31f1d586.png",
+    "flag": "states/9c6fb9bdfd51b22542cb847c9de4bfed31f1d586.png",
     "latitude": 27.766279,
     "longitude": -81.686783,
     "name": "Florida"
   },
   {
-    "flag": "/states/0ee73c11e85c9fa35dd3b24081f18d8b2bf9f6ab.png",
+    "flag": "states/0ee73c11e85c9fa35dd3b24081f18d8b2bf9f6ab.png",
     "latitude": 33.040619,
     "longitude": -83.643074,
     "name": "Georgia"
   },
   {
-    "flag": "/states/0f0ef2cd90cc79d31a71106e26a94feb2752d9d9.png",
+    "flag": "states/0f0ef2cd90cc79d31a71106e26a94feb2752d9d9.png",
     "latitude": 21.094318,
     "longitude": -157.498337,
     "name": "Hawaii"
   },
   {
-    "flag": "/states/55e464710d981678257d4584b3f40bfc88a4fedb.png",
+    "flag": "states/55e464710d981678257d4584b3f40bfc88a4fedb.png",
     "latitude": 44.240459,
     "longitude": -114.478828,
     "name": "Idaho"
   },
   {
-    "flag": "/states/2b3cfa3bc2040c747569215ec1bd82138ba6db04.png",
+    "flag": "states/2b3cfa3bc2040c747569215ec1bd82138ba6db04.png",
     "latitude": 40.349457,
     "longitude": -88.986137,
     "name": "Illinois"
   },
   {
-    "flag": "/states/fec169730382d366ba959a13976ff7ea68aaab19.png",
+    "flag": "states/fec169730382d366ba959a13976ff7ea68aaab19.png",
     "latitude": 39.849426,
     "longitude": -86.258278,
     "name": "Indiana"
   },
   {
-    "flag": "/states/fd8a6165f248dc1a108dea5ee21d56ddfc24f0c2.png",
+    "flag": "states/fd8a6165f248dc1a108dea5ee21d56ddfc24f0c2.png",
     "latitude": 42.011539,
     "longitude": -93.210526,
     "name": "Iowa"
   },
   {
-    "flag": "/states/1dfc1bce2fe9eea40d0ff400e759cebece904a00.png",
+    "flag": "states/1dfc1bce2fe9eea40d0ff400e759cebece904a00.png",
     "latitude": 38.5266,
     "longitude": -96.726486,
     "name": "Kansas"
   },
   {
-    "flag": "/states/d286e055b483177a41a9bf7b93f84d3086777378.png",
+    "flag": "states/d286e055b483177a41a9bf7b93f84d3086777378.png",
     "latitude": 37.66814,
     "longitude": -84.670067,
     "name": "Kentucky"
   },
   {
-    "flag": "/states/5878619f2a09e963703156bcf1808d28803186d7.png",
+    "flag": "states/5878619f2a09e963703156bcf1808d28803186d7.png",
     "latitude": 31.169546,
     "longitude": -91.867805,
     "name": "Louisiana"
   },
   {
-    "flag": "/states/e446e25873144c9a1f35c818701f00e0b56e82e7.png",
+    "flag": "states/e446e25873144c9a1f35c818701f00e0b56e82e7.png",
     "latitude": 44.693947,
     "longitude": -69.381927,
     "name": "Maine"
   },
   {
-    "flag": "/states/d1a4d32834ef088a024e28e0921108c4b6367da8.png",
+    "flag": "states/d1a4d32834ef088a024e28e0921108c4b6367da8.png",
     "latitude": 39.063946,
     "longitude": -76.802101,
     "name": "Maryland"
   },
   {
-    "flag": "/states/89da65e65d6fc021859a0242b6664d2a47c53b12.png",
+    "flag": "states/89da65e65d6fc021859a0242b6664d2a47c53b12.png",
     "latitude": 42.230171,
     "longitude": -71.530106,
     "name": "Massachusetts"
   },
   {
-    "flag": "/states/714573cc3949001fcdedba9978fccc7c790b5ef6.png",
+    "flag": "states/714573cc3949001fcdedba9978fccc7c790b5ef6.png",
     "latitude": 43.326618,
     "longitude": -84.536095,
     "name": "Michigan"
   },
   {
-    "flag": "/states/d5eec19264a9e823432b8159f40ba7df63ef35a6.png",
+    "flag": "states/d5eec19264a9e823432b8159f40ba7df63ef35a6.png",
     "latitude": 45.694454,
     "longitude": -93.900192,
     "name": "Minnesota"
   },
   {
-    "flag": "/states/ea91ae0351ea32270fc3fcfe87e2a135be9dd38c.png",
+    "flag": "states/ea91ae0351ea32270fc3fcfe87e2a135be9dd38c.png",
     "latitude": 32.741646,
     "longitude": -89.678696,
     "name": "Mississippi"
   },
   {
-    "flag": "/states/b0306cac8b30ba2b380666c0bbabf0b358f65b20.png",
+    "flag": "states/b0306cac8b30ba2b380666c0bbabf0b358f65b20.png",
     "latitude": 38.456085,
     "longitude": -92.288368,
     "name": "Missouri"
   },
   {
-    "flag": "/states/fcd6dd0f2c74acad1151b933e4f7aca8c8026d84.png",
+    "flag": "states/fcd6dd0f2c74acad1151b933e4f7aca8c8026d84.png",
     "latitude": 46.921925,
     "longitude": -110.454353,
     "name": "Montana"
   },
   {
-    "flag": "/states/87cf716d3e3c9769858ff699b25420890f585916.png",
+    "flag": "states/87cf716d3e3c9769858ff699b25420890f585916.png",
     "latitude": 41.12537,
     "longitude": -98.268082,
     "name": "Nebraska"
   },
   {
-    "flag": "/states/5871baa6431d25dc154ebdc58e9b01e2c73621dc.png",
+    "flag": "states/5871baa6431d25dc154ebdc58e9b01e2c73621dc.png",
     "latitude": 38.313515,
     "longitude": -117.055374,
     "name": "Nevada"
   },
   {
-    "flag": "/states/f7a2f2791da838d0b131b78c03a7c38a19d26bda.png",
+    "flag": "states/f7a2f2791da838d0b131b78c03a7c38a19d26bda.png",
     "latitude": 43.452492,
     "longitude": -71.563896,
     "name": "New Hampshire"
   },
   {
-    "flag": "/states/578e8e044a096265f143a340109b36a6adcf8c4f.png",
+    "flag": "states/578e8e044a096265f143a340109b36a6adcf8c4f.png",
     "latitude": 40.298904,
     "longitude": -74.521011,
     "name": "New Jersey"
   },
   {
-    "flag": "/states/3803e3b50eaf803768053ce6fdb45917365d11ae.png",
+    "flag": "states/3803e3b50eaf803768053ce6fdb45917365d11ae.png",
     "latitude": 34.840515,
     "longitude": -106.248482,
     "name": "New Mexico"
   },
   {
-    "flag": "/states/9a7fd25e8b061d6449810ea2fd012cbd465e0d4d.png",
+    "flag": "states/9a7fd25e8b061d6449810ea2fd012cbd465e0d4d.png",
     "latitude": 42.165726,
     "longitude": -74.948051,
     "name": "New York"
   },
   {
-    "flag": "/states/cae110fc811db6804976c86de010c32e7cf610da.png",
+    "flag": "states/cae110fc811db6804976c86de010c32e7cf610da.png",
     "latitude": 35.630066,
     "longitude": -79.806419,
     "name": "North Carolina"
   },
   {
-    "flag": "/states/0116d761b004b7f73911513b61b71164775ceaff.png",
+    "flag": "states/0116d761b004b7f73911513b61b71164775ceaff.png",
     "latitude": 47.528912,
     "longitude": -99.784012,
     "name": "North Dakota"
   },
   {
-    "flag": "/states/5753e88e2c081aa467861f45b1491043b6c4ad66.png",
+    "flag": "states/5753e88e2c081aa467861f45b1491043b6c4ad66.png",
     "latitude": 40.388783,
     "longitude": -82.764915,
     "name": "Ohio"
   },
   {
-    "flag": "/states/cf3600a5b38955fc56d31289acdd8d19d439fc91.png",
+    "flag": "states/cf3600a5b38955fc56d31289acdd8d19d439fc91.png",
     "latitude": 35.565342,
     "longitude": -96.928917,
     "name": "Oklahoma"
   },
   {
-    "flag": "/states/3e84e32137708b7c1a4219eecc6cbd351d6443ed.png",
+    "flag": "states/3e84e32137708b7c1a4219eecc6cbd351d6443ed.png",
     "latitude": 44.572021,
     "longitude": -122.070938,
     "name": "Oregon"
   },
   {
-    "flag": "/states/34361f91491de0b10865d9fba621c45d4f514900.png",
+    "flag": "states/34361f91491de0b10865d9fba621c45d4f514900.png",
     "latitude": 40.590752,
     "longitude": -77.209755,
     "name": "Pennsylvania"
   },
   {
-    "flag": "/states/806c2e02ac38738a795b7ed7acb40739a959b757.png",
+    "flag": "states/806c2e02ac38738a795b7ed7acb40739a959b757.png",
     "latitude": 41.680893,
     "longitude": -71.51178,
     "name": "Rhode Island"
   },
   {
-    "flag": "/states/7575b014ca6766c6aa7fef2b60dae35188044750.png",
+    "flag": "states/7575b014ca6766c6aa7fef2b60dae35188044750.png",
     "latitude": 33.856892,
     "longitude": -80.945007,
     "name": "South Carolina"
   },
   {
-    "flag": "/states/c1c5ab2e6ca53dfd66fb59c16bdc6e9d4b4269b1.png",
+    "flag": "states/c1c5ab2e6ca53dfd66fb59c16bdc6e9d4b4269b1.png",
     "latitude": 44.299782,
     "longitude": -99.438828,
     "name": "South Dakota"
   },
   {
-    "flag": "/states/c2ce99b00f01b8a934fd77f0495e2dc209841dbd.png",
+    "flag": "states/c2ce99b00f01b8a934fd77f0495e2dc209841dbd.png",
     "latitude": 35.747845,
     "longitude": -86.692345,
     "name": "Tennessee"
   },
   {
-    "flag": "/states/2c93c9404031fe8415ea50c5ca490e77f26c49c2.png",
+    "flag": "states/2c93c9404031fe8415ea50c5ca490e77f26c49c2.png",
     "latitude": 31.054487,
     "longitude": -97.563461,
     "name": "Texas"
   },
   {
-    "flag": "/states/dc4f0b40dd068e9b40389f3c19805def47bab632.png",
+    "flag": "states/dc4f0b40dd068e9b40389f3c19805def47bab632.png",
     "latitude": 40.150032,
     "longitude": -111.862434,
     "name": "Utah"
   },
   {
-    "flag": "/states/492c3bb491bc92fed3de439d24111877bd8b59e2.png",
+    "flag": "states/492c3bb491bc92fed3de439d24111877bd8b59e2.png",
     "latitude": 44.045876,
     "longitude": -72.710686,
     "name": "Vermont"
   },
   {
-    "flag": "/states/e843e8ced151c1974673388308f013b85f74eb4f.png",
+    "flag": "states/e843e8ced151c1974673388308f013b85f74eb4f.png",
     "latitude": 37.769337,
     "longitude": -78.169968,
     "name": "Virginia"
   },
   {
-    "flag": "/states/ec3d380d24a60700c127f0a0edb788527bc37d22.png",
+    "flag": "states/ec3d380d24a60700c127f0a0edb788527bc37d22.png",
     "latitude": 47.400902,
     "longitude": -121.490494,
     "name": "Washington"
   },
   {
-    "flag": "/states/9997ba279ae516ab70b3c9cbc35544ebaa96db0b.png",
+    "flag": "states/9997ba279ae516ab70b3c9cbc35544ebaa96db0b.png",
     "latitude": 38.491226,
     "longitude": -80.954453,
     "name": "West Virginia"
   },
   {
-    "flag": "/states/bc007a4d276ce79a491315eab1f29a48beca29ad.png",
+    "flag": "states/bc007a4d276ce79a491315eab1f29a48beca29ad.png",
     "latitude": 44.268543,
     "longitude": -89.616508,
     "name": "Wisconsin"
   },
   {
-    "flag": "/states/9cc665c59327e6763673b76587d2ef4f206d06f8.png",
+    "flag": "states/9cc665c59327e6763673b76587d2ef4f206d06f8.png",
     "latitude": 42.755966,
     "longitude": -107.30249,
     "name": "Wyoming"
