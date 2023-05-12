@@ -38,8 +38,7 @@ import Fuse from 'fuse.js';
 
 export default {
   props: {
-    gameOver: Boolean,
-    gameMode: String
+    gameOver: Boolean
   },
   emits: ['answer'],
   data() {
@@ -56,8 +55,15 @@ export default {
       return this.value.length > 1;
     }
   },
+  watch: {
+    'gameStore.gameMode': {
+      handler() {
+        this.initFuse();
+      }
+    }
+  },
   mounted() {
-    this.fuse = new Fuse(this.gameStore[this.gameMode], { threshold: 0.2, minMatchCharLength: 2, ignoreLocation: true, keys: ['name'] });
+    this.initFuse();
     document.addEventListener('keydown', this.handleKeyDown);
   },
   beforeUnmount() {
@@ -69,6 +75,9 @@ export default {
     }
   },
   methods: {
+    initFuse() {
+      this.fuse = new Fuse(this.gameStore[this.gameStore.gameMode], { threshold: 0.2, minMatchCharLength: 2, ignoreLocation: true, keys: ['name'] });
+    },
     search() {
       this.results = this.fuse.search(this.value);
       if (this.results.length) {
