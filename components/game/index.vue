@@ -69,6 +69,14 @@ export default {
     }
   },
   mounted() {
+    // the user exited without starting a new game, so we start one
+    if (this.gameStore.results.length) {
+      const last = this.gameStore.results[this.gameStore.results.length - 1];
+      if (this.gameStore.selected.name === last.guess) {
+        this.gameOver = true;
+        this.resetGame();
+      }
+    }
     this.startGame();
     document.addEventListener('keydown', this.handleKeyDown);
   },
@@ -119,12 +127,6 @@ export default {
           input.focus();
         }
       }, 500);
-    },
-    handleKeyDown(e) {
-      // when the game is over, allow user a keyboard shortcut to restart
-      if ((e.code === 'Space' || e.code  === 'Enter') && this.gameOver) {
-        this.resetGame();
-      }
     }
   }
 };
