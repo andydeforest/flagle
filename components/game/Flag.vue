@@ -15,6 +15,7 @@ export default {
   props: {
     image: String
   },
+  
   data() {
     return {
       loading: true
